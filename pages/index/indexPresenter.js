@@ -7,8 +7,16 @@ import MyMapComponent from "../../components/MyMapComponent";
 const SIGN_UP = "SIGN_UP";
 const MEMBERSHIP_PAY = "MEMBERSHIP_PAY";
 const ASSIGN_SEAT = "ASSIGN_SEAT";
+const MAN1 = "MAN1";
+const WOMAN1 = "WOMAN1";
+const WOMAN2 = "WOMAN2";
 
-export default () => (
+export default ({
+  onHumanClick,
+  man1Changed,
+  woman1Changed,
+  woman2Changed
+}) => (
   <div>
     {/* 타이틀 표시 */}
     <Head>
@@ -22,6 +30,61 @@ export default () => (
             <MainImgTopM src="/static/img/yeoun/poster.png" alt="" />
           </MainImgTop>
         </MainIntro>
+
+        <TransformedContainer>
+          <Link href={"#"}>
+            <a
+              onClick={() => {
+                onHumanClick(MAN1);
+              }}
+            >
+              <ToBeTransformed
+                show={!man1Changed}
+                src={"/static/img/yeoun/man1.png"}
+              />
+              <Transformed
+                show={man1Changed}
+                src={"/static/img/yeoun/animal-1295183_640.png"}
+              />
+            </a>
+          </Link>
+        </TransformedContainer>
+        <TransformedContainer2>
+          <Link href={"#"}>
+            <a
+              onClick={() => {
+                onHumanClick(WOMAN1);
+              }}
+            >
+              <ToBeTransformed
+                show={!woman1Changed}
+                src={"/static/img/yeoun/woman1.png"}
+              />
+              <Transformed
+                show={woman1Changed}
+                src={"/static/img/yeoun/the-cup-2360104_640.png"}
+              />
+            </a>
+          </Link>
+        </TransformedContainer2>
+        <TransformedContainer3>
+          <Link href={"#"}>
+            <a
+              onClick={() => {
+                onHumanClick(WOMAN2);
+              }}
+            >
+              <ToBeTransformed
+                show={!woman2Changed}
+                src={"/static/img/yeoun/woman2.png"}
+              />
+              <Transformed
+                show={woman2Changed}
+                src={"/static/img/yeoun/wooden-rocking-chair-4321820_640.png"}
+              />
+            </a>
+          </Link>
+        </TransformedContainer3>
       </Main>
       {/* Main 끝 */}
 
@@ -267,7 +330,9 @@ const Container = styled.div`
 `;
 
 // section 1 - Main 시작
-const Main = styled.section``;
+const Main = styled.section`
+  position: relative;
+`;
 const Title = styled.div``;
 const MainIntro = styled.div`
   display: flex;
@@ -1256,5 +1321,165 @@ const Map = styled.div`
   display: block;
   @media (min-width: 1020px) {
     /* padding-top: 30; */
+  }
+`;
+
+const ToBeTransformed = styled.img`
+  width: 50px;
+  display: ${props => (props.show ? "inherit" : "none")};
+`;
+
+const Transformed = styled.img`
+  width: 50px;
+  display: ${props => (props.show ? "inherit" : "none")};
+`;
+
+const TransformedContainer = styled.div`
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  @keyframes blink {
+    10% {
+      left: 5%;
+      top: 5%;
+    }
+    20% {
+      left: 10%;
+      top: 10%;
+    }
+    30% {
+      left: 15%;
+      top: 15%;
+    }
+    40% {
+      left: 20%;
+      top: 25%;
+    }
+    50% {
+      left: 30%;
+      top: 35%;
+    }
+    60% {
+      left: 25%;
+      top: 30%;
+    }
+    70% {
+      left: 20%;
+      top: 25%;
+    }
+    80% {
+      left: 10%;
+      top: 15%;
+    }
+    90% {
+      left: 5%;
+      top: 5%;
+    }
+  }
+  animation: blink linear infinite 10s;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+const TransformedContainer2 = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 40%;
+
+  @keyframes blink2 {
+    10% {
+      left: 50%;
+      top: 40%;
+    }
+    20% {
+      left: 40%;
+      top: 35%;
+    }
+    30% {
+      left: 50%;
+      top: 50%;
+    }
+    40% {
+      left: 60%;
+      top: 65%;
+    }
+    50% {
+      left: 70%;
+      top: 65%;
+    }
+    60% {
+      left: 65%;
+      top: 60%;
+    }
+    70% {
+      left: 50%;
+      top: 55%;
+    }
+    80% {
+      left: 39%;
+      top: 45%;
+    }
+    90% {
+      left: 30%;
+      top: 30%;
+    }
+  }
+  animation: blink2 linear infinite 10s;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+const TransformedContainer3 = styled.div`
+  position: absolute;
+  left: 90%;
+  top: 90%;
+
+  @keyframes blink3 {
+    10% {
+      left: 85%;
+      top: 76%;
+    }
+    20% {
+      left: 80%;
+      top: 77%;
+    }
+    30% {
+      left: 70%;
+      top: 74%;
+    }
+    40% {
+      left: 70%;
+      top: 75%;
+    }
+    50% {
+      left: 65%;
+      top: 65%;
+    }
+    60% {
+      left: 65%;
+      top: 40%;
+    }
+    70% {
+      left: 63%;
+      top: 20%;
+    }
+    80% {
+      left: 70%;
+      top: 50%;
+    }
+    90% {
+      left: 80%;
+      top: 60%;
+    }
+  }
+  animation: blink3 linear infinite 10s;
+
+  &:hover {
+    cursor: pointer;
   }
 `;
