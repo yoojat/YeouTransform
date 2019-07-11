@@ -37,6 +37,7 @@ export default ({
           <Link href={"#"}>
             <a
               onClick={() => {
+                e.preventDefault();
                 onHumanClick(MAN1);
               }}
             >
@@ -54,7 +55,8 @@ export default ({
         <TransformedContainer>
           <Link href={"#"}>
             <a
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
                 onHumanClick(WOMAN1);
               }}
             >
@@ -72,7 +74,8 @@ export default ({
         <TransformedContainer3>
           <Link href={"#"}>
             <a
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
                 onHumanClick(WOMAN2);
               }}
             >
@@ -90,7 +93,8 @@ export default ({
         <TransformedContainer4>
           <Link href={"#"}>
             <a
-              onClick={() => {
+              onClick={(e) => {
+                e.preventDefault();
                 onHumanClick(MAN2);
               }}
             >
