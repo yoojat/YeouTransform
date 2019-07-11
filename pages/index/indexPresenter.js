@@ -36,7 +36,7 @@ export default ({
         <TransformedContainer2>
           <Link href={"#"}>
             <a
-              onClick={() => {
+              onClick={(e) => {
                 e.preventDefault();
                 onHumanClick(MAN1);
               }}
