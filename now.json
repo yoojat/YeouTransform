@@ -1,0 +1,6 @@
+{
+  "version": 2,
+  "alias": "transform-yeoun",
+  "name": "transform-yeoun",
+  "builds": [{ "src": "package.json", "use": "@now/next" }]
+}

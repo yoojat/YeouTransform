@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+@font-face {
+  font-family: "BMDOHYEON";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "yg-jalnan";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "InkLipquid";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  font-family: "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  color: #1b1c20;
+  font-family: BMDOHYEON, "Noto Sans KR", sans-serif;
+}
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: black;
+}
+
+a:hover,
+a:active {
+  text-decoration: none;
+  color: black;
+}
+
+img,
+input,
+button,
+label {
+  vertical-align: top;
+}
+select,
+input {
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+h1 {
+  font-family: BMDOHYEON, "Noto Sans KR", sans-serif;
+  font-size: 22px;
+  line-height: 28px;
+  color: #4071ff;
+}
+h3 {
+  font-family: BMDOHYEON, "Noto Sans KR", sans-serif;
+  font-size: 14px;
+  line-height: 24px;
+  color: #1b1c20;
+}
