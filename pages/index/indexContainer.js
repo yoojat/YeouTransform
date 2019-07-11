@@ -2,6 +2,8 @@ import IndexPresenter from "./indexPresenter";
 import withLayout from "../../components/withLayout";
 
 const MAN1 = "MAN1";
+const MAN2 = "MAN2";
+
 const WOMAN1 = "WOMAN1";
 const WOMAN2 = "WOMAN2";
 class IndexContainer extends React.Component {
@@ -14,11 +16,17 @@ class IndexContainer extends React.Component {
     };
   }
   render() {
-    const { man1Changed, woman1Changed, woman2Changed } = this.state;
+    const {
+      man1Changed,
+      man2Changed,
+      woman1Changed,
+      woman2Changed
+    } = this.state;
     return (
       <IndexPresenter
         onHumanClick={this.onHumanClick}
         man1Changed={man1Changed}
+        man2Changed={man2Changed}
         woman1Changed={woman1Changed}
         woman2Changed={woman2Changed}
       />
@@ -29,6 +37,9 @@ class IndexContainer extends React.Component {
     switch (target) {
       case MAN1:
         this.setState({ man1Changed: !this.state.man1Changed });
+        break;
+      case MAN2:
+        this.setState({ man2Changed: !this.state.man2Changed });
         break;
       case WOMAN1:
         this.setState({ woman1Changed: !this.state.woman1Changed });

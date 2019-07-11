@@ -8,12 +8,14 @@ const SIGN_UP = "SIGN_UP";
 const MEMBERSHIP_PAY = "MEMBERSHIP_PAY";
 const ASSIGN_SEAT = "ASSIGN_SEAT";
 const MAN1 = "MAN1";
+const MAN2 = "MAN2";
 const WOMAN1 = "WOMAN1";
 const WOMAN2 = "WOMAN2";
 
 export default ({
   onHumanClick,
   man1Changed,
+  man2Changed,
   woman1Changed,
   woman2Changed
 }) => (
@@ -31,7 +33,7 @@ export default ({
           </MainImgTop>
         </MainIntro>
 
-        <TransformedContainer>
+        <TransformedContainer2>
           <Link href={"#"}>
             <a
               onClick={() => {
@@ -48,8 +50,8 @@ export default ({
               />
             </a>
           </Link>
-        </TransformedContainer>
-        <TransformedContainer2>
+        </TransformedContainer2>
+        <TransformedContainer>
           <Link href={"#"}>
             <a
               onClick={() => {
@@ -66,7 +68,7 @@ export default ({
               />
             </a>
           </Link>
-        </TransformedContainer2>
+        </TransformedContainer>
         <TransformedContainer3>
           <Link href={"#"}>
             <a
@@ -85,6 +87,24 @@ export default ({
             </a>
           </Link>
         </TransformedContainer3>
+        <TransformedContainer4>
+          <Link href={"#"}>
+            <a
+              onClick={() => {
+                onHumanClick(MAN2);
+              }}
+            >
+              <ToBeTransformed
+                show={!man2Changed}
+                src={"/static/img/yeoun/business-man-295169_640.png"}
+              />
+              <Transformed
+                show={man2Changed}
+                src={"/static/img/yeoun/pocket-watch-2531472_640.png"}
+              />
+            </a>
+          </Link>
+        </TransformedContainer4>
       </Main>
       {/* Main 끝 */}
 
@@ -1478,6 +1498,56 @@ const TransformedContainer3 = styled.div`
     }
   }
   animation: blink3 linear infinite 10s;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+const TransformedContainer4 = styled.div`
+  position: absolute;
+  left: 90%;
+  top: 10%;
+
+  @keyframes blink4 {
+    10% {
+      left: 85%;
+      top: 10%;
+    }
+    20% {
+      left: 80%;
+      top: 11%;
+    }
+    30% {
+      left: 70%;
+      top: 12%;
+    }
+    40% {
+      left: 60%;
+      top: 14%;
+    }
+    50% {
+      left: 50%;
+      top: 20%;
+    }
+    60% {
+      left: 45%;
+      top: 25%;
+    }
+    70% {
+      left: 63%;
+      top: 40%;
+    }
+    80% {
+      left: 70%;
+      top: 50%;
+    }
+    90% {
+      left: 80%;
+      top: 20%;
+    }
+  }
+  animation: blink4 linear infinite 15s;
 
   &:hover {
     cursor: pointer;
